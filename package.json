@@ -1,0 +1,22 @@
+{
+  "name": "workout-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raflores10/workout-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Raflores10/workout-tracker/issues"
+  },
+  "homepage": "https://github.com/Raflores10/workout-tracker#readme",
+  "dependencies": {
+    "sequelize": "^6.28.0"
+  }
+}
