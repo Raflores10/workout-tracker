@@ -5,6 +5,6 @@ const userRoutes = require('./userController');
 router.use('/api/users', userRoutes);
 
 const workoutRoutes = require('./workoutController');
-router.use('/api/workout', workoutRoutes);
+router.use('/api/workouts', workoutRoutes);
 
 module.exports = router;
