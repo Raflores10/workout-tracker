@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {User} = require("../models");
+const {User, Workout} = require("../models");
 const bcrypt = require("bcrypt");
 
 router.get("/", async (req, res)=> {
@@ -12,6 +12,18 @@ router.get("/", async (req, res)=> {
         res.status(500).json({msg: "An error has occurred!"});
     }
 })
+
+router.get("/:id", (req,res)=>{
+    User.findByPk(req.params.id,{
+     include:[Workout]
+    }).then(userData=>{
+     res.json(userData)
+    }).catch(err=>{
+     console.log(err);
+     res.status(500).json({msg:"An error has occurred",err})
+    })
+ })
+
 
 router.post("/", async (req, res)=> {
     try{
