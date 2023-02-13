@@ -19,7 +19,6 @@ table {
     text-align: center;
 }
 
-<<<<<<< HEAD
 span {
     font-weight: bold;
 }
@@ -40,8 +39,6 @@ span {
     color: gray;
 }
 
-=======
->>>>>>> 9ffec4a2603c20cd9802837676abf48201eb75fe
 .card-container {
     display: flex;
     flex-direction: row;
