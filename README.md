@@ -1,16 +1,18 @@
 # workout-tracker
 
 ## User Story
+```md
 As an avid gym-goer,
 I want an easy, streamlined website
 So that I can easily track my core lifts.
-
+```
 ## Description
 The motivation behind this project was to create an application that would be more user friendly than what other applications can be. Being a gym-goer, I want to track how much I am lifting on bench press, squat, and deadlift. Sometimes in the gym we plateau into a regular weight with only the reps changing, this can be difficult to grasp that we are still progressing even though it might not seem like it. What we need is a way to calculate what our "One-Rep Max" is. Using various backend technologies including: Node.js, Express, Handlebars, and Sequelize amongst others, we want a website that can do these calculations for us.
 
 This solves the need of an individual who is seemingly stuck at a certain weight. This motivational tool can be just enough to reach over that plateau.
 
 ## Acceptance Criteria
+```md
 GIVEN workout tracker website
 WHEN I visit the webpage
 THEN I am presented with an option to sign up.
@@ -24,7 +26,7 @@ WHEN I enter in that data,
 THEN I am taken to a records page and shown my "One-Rep-Max"
 WHEN I log out,
 THEN I am no longer able to see my data.
-
+```
 ## My Task
 To create a functional and streamlined workout tracker website than can calculate and store our "One-Rep-Max" data.
 
