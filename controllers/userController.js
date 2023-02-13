@@ -53,8 +53,9 @@ router.post("/login", async (req, res)=> {
                 password: req.body.password
             }
         });
-    
         if (findUser){
+            req.session.userID = findUser.id;
+            req.session.username = findUser.username;
             return res.status(200).json(findUser);
         } else {
             return res.status(401).json({msg: "Incorrect email or password!"});
