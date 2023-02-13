@@ -1,0 +1,20 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">User</th>
+            <th scope="col">Bench Max</th>
+            <th scope="col">Deadlift Max</th>
+            <th scope="col">Squat Max</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each allWorkouts}}
+        <tr>
+            <td>{{user_id}}</td>
+            <td>{{bench_max}}</td>
+            <td>{{deadlift_max}}</td>
+            <td>{{squat_max}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
