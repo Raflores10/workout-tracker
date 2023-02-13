@@ -3,11 +3,16 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const allRoutes = require('./controllers');
 
+
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
+<<<<<<< HEAD
 app.use(require('express-session')({ secret: 'password', resave: true, saveUninitialized: true }));
+=======
+app.use(require('express-session')({ secret: 'secret', resave: true, saveUninitialized: true }));
+>>>>>>> 9ffec4a2603c20cd9802837676abf48201eb75fe
 const PORT = process.env.PORT || 3000;
 
 const { User, Workout} = require('./models');

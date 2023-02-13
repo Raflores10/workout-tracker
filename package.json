@@ -25,7 +25,10 @@
     "express-handlebars": "^6.0.7",
     "express-session": "^1.17.3",
     "fitness-calc": "^1.0.2",
+<<<<<<< HEAD
     "install": "^0.13.0",
+=======
+>>>>>>> 9ffec4a2603c20cd9802837676abf48201eb75fe
     "mysql2": "^3.1.2",
     "npm": "^9.4.2",
     "sequelize": "^6.28.0"
