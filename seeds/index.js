@@ -48,6 +48,42 @@ const workoutData = [
         deadlift_max: 405,
         squat_max: 365,
         user_id: 4
+    },
+    {
+        bench_max: 145,
+        deadlift_max: 195,
+        squat_max: 185,
+        user_id: 1
+    },
+    {
+        bench_max: 155,
+        deadlift_max: 195,
+        squat_max: 185,
+        user_id: 1
+    },
+    {
+        bench_max: 165,
+        deadlift_max: 195,
+        squat_max: 185,
+        user_id: 1
+    },
+    {
+        bench_max: 175,
+        deadlift_max: 195,
+        squat_max: 185,
+        user_id: 1
+    },
+    {
+        bench_max: 185,
+        deadlift_max: 195,
+        squat_max: 185,
+        user_id: 1
+    },
+    {
+        bench_max: 195,
+        deadlift_max: 195,
+        squat_max: 185,
+        user_id: 1
     }
 
 ];
