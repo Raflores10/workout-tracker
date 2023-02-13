@@ -1,10 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { User, Workout } = require("../models");
-<<<<<<< HEAD
 const sequelize = require('sequelize');
-=======
->>>>>>> 9ffec4a2603c20cd9802837676abf48201eb75fe
 
 router.get('/login', (req, res)=> {
     res.render("login");
