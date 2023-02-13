@@ -1,20 +1,65 @@
-<table class="table table-bordered">
+<header>
+    <nav>
+        <div class="navbar-container">
+            <h1>COR3</h1>
+            <div class="nav-links">
+                <a class="home" href="#">Home</a>
+                <a class="logout" href="#">Logout</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="record-body">
+<div class="record-intro">
+    <h1>Hello, {{username}}!</h1>
+    <p>The following table records your <span>one rep maximum</span> for each of the three core lifts. This is
+        determined from your workout entries, see how far you've come!
+    </p>
+</div>
+<table class="table table-bordered table-responsive">
     <thead>
         <tr>
-            <th scope="col">User</th>
             <th scope="col">Bench Max</th>
-            <th scope="col">Deadlift Max</th>
-            <th scope="col">Squat Max</th>
         </tr>
     </thead>
     <tbody>
-        {{#each allWorkouts}}
+        {{#each benchMaxes as |bench|}}
         <tr>
-            <td>{{user_id}}</td>
-            <td>{{bench_max}}</td>
-            <td>{{deadlift_max}}</td>
-            <td>{{squat_max}}</td>
+            <td>{{bench}}</td>
         </tr>
         {{/each}}
     </tbody>
 </table>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Deadlift Max</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each deadliftMaxes as |deadlift|}}
+        <tr>
+            <td>{{deadlift}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Squat Max</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each squatMaxes as |squat|}}
+        <tr>
+            <td>{{squat}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>
+
+<script src="./js/record.js"></script>

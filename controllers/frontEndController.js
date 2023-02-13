@@ -64,11 +64,38 @@ router.get('/record', (req, res)=> {
     Workout.findAll({
         where: {
             user_id: req.session.userID
-        }
+        },
+        order: [
+            ["id", "DESC"]
+        ]
     }).then(workoutData=>{
+        const bench = [];
+        const deadlift = [];
+        const squat = [];
         const hbsWorkouts = workoutData.map(workout=>workout.toJSON())
+        for (let workout of hbsWorkouts){
+            bench.push(workout.bench_max);
+            deadlift.push(workout.deadlift_max);
+            squat.push(workout.squat_max);
+        }
+
+        const filteredBench = bench.filter((max, index)=> {
+            return index === bench.indexOf(max);
+        })
+
+        const filteredDeadlift = deadlift.filter((max, index)=> {
+            return index === deadlift.indexOf(max);
+        })
+
+        const filteredSquat = squat.filter((max, index)=> {
+            return index === squat.indexOf(max);
+        })
+
         res.render("record", {
-            allWorkouts: hbsWorkouts
+            benchMaxes: filteredBench,
+            deadliftMaxes: filteredDeadlift,
+            squatMaxes: filteredSquat,
+            username: req.session.username
         });
     }).catch(error => {
         console.log(error);
