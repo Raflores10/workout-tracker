@@ -123,6 +123,16 @@ span {
     margin: 0 auto;
 }
 
+.main {
+    padding: 20px;
+    margin: 0px auto;
+    width: 400px;
+  }
+.main h3 {
+    padding: 10px 0 20px;
+    text-align: center;
+}
+
 #login-form,
 #signup-form {
     height: 80vh;
