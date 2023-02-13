@@ -83,6 +83,15 @@ router.get('/record', (req, res)=> {
     }).catch(error => {
         console.log(error);
     })
+    router.get('/squats', (req, res)=> {
+        res.render("squats");
+    })
+    router.get('/deadlift', (req, res)=> {
+        res.render("deadlift");
+    })
+    router.get('/benchpress', (req, res)=> {
+        res.render("benchpress");
+    })
 
 })
 
