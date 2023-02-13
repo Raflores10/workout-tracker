@@ -1,5 +1,6 @@
 document.querySelector(".record").addEventListener("click", (e)=> {
     e.preventDefault();
+
     location.href="/record"
 })
 

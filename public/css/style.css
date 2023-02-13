@@ -1,22 +1,41 @@
 body {
-    /* min-height: 70vh; */
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
-}
-
-nav {
-    height: 100px;
-}
-
-form {
-    width: 600px;
-    margin: 0 auto;
+    align-content: space-between;
 }
 
 table {
     text-align: center;
+}
+
+span {
+    font-weight: bold;
+}
+
+nav,
+footer {
+    background-color: blanchedalmond;
+    width: 100%;
+}
+
+.nav-links a {
+    display: inline;
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-links a:hover {
+    color: gray;
+}
+
+.homepage-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
 }
 
 span {
@@ -71,22 +90,17 @@ span {
     /* justify-content: center; */
 }
 
-footer,
-header {
-    min-height: 15vh;
+.record-intro {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-
-
-nav,
-footer {
-    background-color: blanchedalmond;
-    width: 100%;
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
+.record-body {
+    width: 80vh;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .creators li {
@@ -101,6 +115,20 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 20px 40px;
+}
+
+.btn-primary{
+    width: 100px;
+    margin: 0 auto;
+}
+
+#login-form,
+#signup-form {
+    height: 80vh;
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

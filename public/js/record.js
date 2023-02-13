@@ -1,7 +1,7 @@
-document.querySelector(".home").addEventListener("click", (e)=> {
+document.querySelector(".home").addEventListener("click", async (e)=> {
     e.preventDefault();
 
-    location.href="/homepage";
+    location.href="/homepage"
 })
 
 document.querySelector(".logout").addEventListener("click", async (e)=> {
@@ -9,5 +9,5 @@ document.querySelector(".logout").addEventListener("click", async (e)=> {
 
     const logout = await fetch("/logout");
 
-    location.href="/login";
+    location.href="/login"
 })

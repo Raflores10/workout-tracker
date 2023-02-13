@@ -28,7 +28,8 @@ document.querySelector("#login-form").addEventListener("submit", async (e)=> {
     }
 });
 
-document.querySelector(".signup").addEventListener("click", (e) => {
-    e.preventDefault
-    location.href="/signup"
+document.querySelector(".signup").addEventListener("click", (e)=> {
+    e.preventDefault();
+
+    location.href="/signup";
 })

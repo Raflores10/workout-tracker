@@ -30,7 +30,8 @@ document.querySelector("#signup-form").addEventListener("submit", async (e)=> {
     }
 })
 
-document.querySelector(".login").addEventListener("click", async (e)=> {
+document.querySelector(".login").addEventListener("click", (e)=> {
     e.preventDefault();
-    location.href="/login";
+
+    location.href="/login"
 })
