@@ -13,7 +13,7 @@ document.querySelector("#login-form").addEventListener("submit", async (e)=> {
         password: password.value
     }
 
-    const fetchUser = await fetch("/api/users/login", {
+    const fetchUser = await fetch("/login", {
         method: "POST",
         body: JSON.stringify(user),
         headers: {

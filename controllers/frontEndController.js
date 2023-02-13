@@ -1,13 +1,59 @@
 const express = require('express');
 const router = express.Router();
-const { Workout } = require("../models");
+const { User, Workout } = require("../models");
 
 router.get('/login', (req, res)=> {
     res.render("login");
 })
 
+router.post("/login", async (req, res)=> {
+    try {
+        const findUser = await User.findOne({
+            where: {
+                username: req.body.username,
+                password: req.body.password
+            }
+        });
+        if (findUser){
+            req.session.userID = findUser.id;
+            req.session.username = findUser.username;
+            return res.status(200).json(findUser);
+        } else {
+            return res.status(401).json({msg: "Incorrect email or password!"});
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({msg: "An error has occurred."});
+    }
+})
+
+router.get('/logout', (req, res)=> {
+    req.session.destroy();
+    res.send("Logged out!");
+})
+
 router.get('/signup', (req, res)=> {
     res.render("signup");
+})
+
+router.post("/signup", async (req, res)=> {
+    try{
+        const newUser = await User.create({
+            email: req.body.email,
+            username: req.body.username,
+            password: req.body.password
+        });
+        if (newUser){
+            req.session.userID = newUser.id;
+            req.session.username = newUser.username;
+            res.json(newUser)
+        } else {
+            res.status(404).json({msg: "Something went wrong!"});
+        }
+    } catch (error){
+        console.log(error);
+        res.status(500).json({msg: "An error has occurred!"});
+    }
 })
 
 router.get('/homepage', (req, res)=> {
@@ -28,11 +74,6 @@ router.get('/record', (req, res)=> {
         console.log(error);
     })
 
-})
-
-router.get('/logout', (req, res)=> {
-    req.session.destroy();
-    res.send("Logged out!");
 })
 
 module.exports = router;

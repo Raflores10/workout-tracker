@@ -15,7 +15,7 @@ document.querySelector("#signup-form").addEventListener("submit", async (e)=> {
         password: password.value
     };
 
-    const userFetch = await fetch("/api/users", {
+    const userFetch = await fetch("/signup", {
         method: "POST",
         body: JSON.stringify(newUser),
         headers: {
