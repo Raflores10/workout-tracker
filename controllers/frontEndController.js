@@ -60,6 +60,31 @@ router.post("/signup", async (req, res)=> {
 router.get('/homepage', (req, res)=> {
     res.render("homepage");
 })
+router.get('/squats', (req, res)=> {
+    res.render("squats");
+})
+router.get('/deadlift', (req, res)=> {
+    res.render("deadlift");
+})
+router.get('/benchpress', (req, res)=> {
+    res.render("benchpress");
+})
+
+router.get('/record', (req, res)=> {
+    Workout.findAll({
+        where: {
+            user_id: req.session.userID
+        }
+    }).then(workoutData=>{
+        const hbsWorkouts = workoutData.map(workout=>workout.toJSON())
+        res.render("record", {
+            allWorkouts: hbsWorkouts
+        });
+    }).catch(error => {
+        console.log(error);
+    })
+
+})
 
 router.get('/record', (req, res)=> {
     Workout.findAll({
@@ -82,6 +107,15 @@ router.get('/record', (req, res)=> {
         });
     }).catch(error => {
         console.log(error);
+    })
+    router.get('/squats', (req, res)=> {
+        res.render("squats");
+    })
+    router.get('/deadlift', (req, res)=> {
+        res.render("deadlift");
+    })
+    router.get('/benchpress', (req, res)=> {
+        res.render("benchpress");
     })
 
 })
