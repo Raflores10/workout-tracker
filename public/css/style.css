@@ -38,6 +38,26 @@ footer {
     height: 80vh;
 }
 
+span {
+    font-weight: bold;
+}
+
+.record-intro {
+    text-align: center;
+}
+
+.nav-links a {
+    display: inline;
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-links a:hover {
+    color: gray;
+}
+
 .card-container {
     display: flex;
     flex-direction: row;

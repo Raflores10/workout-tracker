@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { User, Workout } = require("../models");
+const sequelize = require('sequelize');
 
 router.get('/login', (req, res)=> {
     res.render("login");
@@ -59,6 +60,15 @@ router.post("/signup", async (req, res)=> {
 router.get('/homepage', (req, res)=> {
     res.render("homepage");
 })
+router.get('/squats', (req, res)=> {
+    res.render("squats");
+})
+router.get('/deadlift', (req, res)=> {
+    res.render("deadlift");
+})
+router.get('/benchpress', (req, res)=> {
+    res.render("benchpress");
+})
 
 router.get('/record', (req, res)=> {
     Workout.findAll({
@@ -99,6 +109,40 @@ router.get('/record', (req, res)=> {
         });
     }).catch(error => {
         console.log(error);
+    })
+
+})
+
+router.get('/record', (req, res)=> {
+    Workout.findAll({
+        // attributes: [
+        //     [sequelize.fn('DISTINCT', Sequelize.col('bench_max')) ,'bench_max'],
+        //     [sequelize.fn('DISTINCT', Sequelize.col('squat_max')) ,'squat_max'],
+        //     [sequelize.fn('DISTINCT', Sequelize.col('deadlift_max')) ,'deadlift_max']
+        // ],
+        where: {
+            user_id: req.session.userID
+        }, 
+        order: [
+            ["id", "DESC"]
+        ]
+    }).then(workoutData=>{
+        const hbsWorkouts = workoutData.map(workout=>workout.toJSON())
+        res.render("record", {
+            allWorkouts: hbsWorkouts,
+            username: req.session.username
+        });
+    }).catch(error => {
+        console.log(error);
+    })
+    router.get('/squats', (req, res)=> {
+        res.render("squats");
+    })
+    router.get('/deadlift', (req, res)=> {
+        res.render("deadlift");
+    })
+    router.get('/benchpress', (req, res)=> {
+        res.render("benchpress");
     })
 
 })
