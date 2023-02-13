@@ -8,7 +8,6 @@ const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
-<<<<<<< HEAD
 app.use(require('express-session')({ secret: 'password', resave: true, saveUninitialized: true }));
 const PORT = process.env.PORT || 3000;
 
