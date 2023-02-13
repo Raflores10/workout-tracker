@@ -11,3 +11,4 @@ document.querySelector(".logout").addEventListener("click", async (e)=> {
 
     location.href="/login"
 })
+
