@@ -5,7 +5,7 @@ document.querySelector("#login-form").addEventListener("submit", async (e)=> {
     const password = document.querySelector("#password");
 
     if(!username.value || !password.value){
-        window.alert("Please enter a value for both fields!");
+        return window.alert("Please enter a value for both fields!");
     }
 
     const user = {
