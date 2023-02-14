@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const { User, Workout } = require("../models");
 
+router.get('/', (req, res)=> {
+    res.render("login");
+})
+
 router.get('/login', (req, res)=> {
     res.render("login");
 })
