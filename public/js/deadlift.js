@@ -33,4 +33,10 @@ document.querySelector("form").addEventListener("submit", async (e)=> {
       window.alert("Oops!");
     }
     
-  });
+});
+
+document.querySelector(".logout").addEventListener("click", async (e)=> {
+    e.preventDefault();
+    const logout = await fetch("/logout");
+    location.href="/login";
+});

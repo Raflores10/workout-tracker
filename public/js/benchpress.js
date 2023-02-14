@@ -34,3 +34,9 @@ document.querySelector("form").addEventListener("submit", async (e)=> {
   }
   
 });
+
+document.querySelector(".logout").addEventListener("click", async (e)=> {
+  e.preventDefault();
+  const logout = await fetch("/logout");
+  location.href="/login";
+});
