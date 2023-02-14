@@ -2,12 +2,12 @@
 
 ## User Story
 ```md
-As an avid gym-goer,
+As a regular gym-goer,
 I want an easy, streamlined website
 So that I can easily track my core lifts.
 ```
 ## Description
-The motivation behind this project was to create an application that would be more user friendly than what other applications can be. Being a gym-goer, I want to track how much I am lifting on bench press, squat, and deadlift. Sometimes in the gym we plateau into a regular weight with only the reps changing, this can be difficult to grasp that we are still progressing even though it might not seem like it. What we need is a way to calculate what our "One-Rep Max" is. Using various backend technologies including: Node.js, Express, Handlebars, and Sequelize amongst others, we want a website that can do these calculations for us.
+The motivation behind this project was to create an application that would be more user friendly than others. Being a regular gym-goer, I want to track how much I am lifting on bench press, squat, and deadlift. Sometimes in the gym we plateau into a regular weight with only the reps changing, this can be difficult to grasp that we are still progressing even though it might not seem like it. What we need is a way to calculate what our "One-Rep Max" is. Using various backend technologies including: Node.js, Express, Handlebars, and Sequelize amongst others, we want a website that can do these calculations for us.
 
 This solves the need of an individual who is seemingly stuck at a certain weight. This motivational tool can be just enough to reach over that plateau.
 
@@ -32,6 +32,7 @@ To create a functional and streamlined workout tracker website than can calculat
 
 ## Installation
 Begin at the GitHub repository that holds the code:
+https://github.com/Raflores10/workout-tracker
 
 Once you are at the correct repository, click on the green "<> Code" button and select "SSH" under the "Local" tab.
 
@@ -43,6 +44,8 @@ When you are at the destination you would like to clone, follow through with the
 
 ## Usage
 When arriving at the website, users will be presented with a sign up page. Once signed up, the user will be directed to the homepage. Once the user selects an options, they are then able to enter in their workout data. Once entered, the user is shown their "One-Rep Max" and taken to their records page. If the user clicks the logout button, they are taken to the login page.
+
+A .env file will be necessary.
 
 ## Credits
 Derek Caldwell - UW Coding Bootcamp Student Rickie Flores - UW Coding Bootcamp Student Kraig Mansfield - UW Coding Bootcamp Student
