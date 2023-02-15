@@ -1,3 +1,16 @@
+const homeLink = document.createElement("a");
+homeLink.setAttribute("href", "#");
+homeLink.setAttribute("class", "home");
+homeLink.textContent = "Home";
+
+const logoutLink = document.createElement("a");
+logoutLink.setAttribute("href", "#");
+logoutLink.setAttribute("class", "logout");
+logoutLink.textContent = "Logout";
+
+document.querySelector(".nav-links").appendChild(homeLink);
+document.querySelector(".nav-links").appendChild(logoutLink);
+
 document.querySelector("form").addEventListener("submit", async (e)=> {
     e.preventDefault();
   
@@ -10,12 +23,9 @@ document.querySelector("form").addEventListener("submit", async (e)=> {
   
     const oneRepMax = Math.round((100 * weight.value) / (101.3 - (2.67123 * reps.value)));
   
-    const previousMaxData = await fetch("/api/workouts/1");
-    const previousMaxes = await previousMaxData.json();
-  
     const newWorkout = {
-      bench_max: previousMaxes[previousMaxes.length - 1].bench_max,
-      deadlift_max: previousMaxes[previousMaxes.length - 1].deadlift_max,
+      bench_max: null,
+      deadlift_max: null,
       squat_max: oneRepMax
     }
   
@@ -34,3 +44,17 @@ document.querySelector("form").addEventListener("submit", async (e)=> {
     }
     
   });
+
+  document.querySelector(".home").addEventListener("click", async (e)=> {
+    e.preventDefault();
+
+    location.href="/homepage"
+})
+
+document.querySelector(".logout").addEventListener("click", async (e)=> {
+    e.preventDefault();
+
+    const logout = await fetch("/logout");
+
+    location.href="/login"
+})

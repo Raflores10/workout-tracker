@@ -1,3 +1,10 @@
+const homeLink = document.createElement("a");
+homeLink.setAttribute("href", "#");
+homeLink.setAttribute("class", "signup");
+homeLink.textContent = "Sign Up";
+
+document.querySelector(".nav-links").appendChild(homeLink);
+
 document.querySelector("#login-form").addEventListener("submit", async (e)=> {
     e.preventDefault();
 
@@ -24,7 +31,7 @@ document.querySelector("#login-form").addEventListener("submit", async (e)=> {
     if (fetchUser.ok){
         location.href="/homepage";
     } else {
-        window.alert("Oops!");
+        window.alert("The Username or Password is incorrect, please try again.");
     }
 });
 

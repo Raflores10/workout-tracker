@@ -1,3 +1,10 @@
+const homeLink = document.createElement("a");
+homeLink.setAttribute("href", "#");
+homeLink.setAttribute("class", "login");
+homeLink.textContent = "Login";
+
+document.querySelector(".nav-links").appendChild(homeLink);
+
 document.querySelector("#signup-form").addEventListener("submit", async (e)=> {
     e.preventDefault();
     
