@@ -31,7 +31,7 @@ document.querySelector("#login-form").addEventListener("submit", async (e)=> {
     if (fetchUser.ok){
         location.href="/homepage";
     } else {
-        window.alert("Oops!");
+        window.alert("The Username or Password is incorrect, please try again.");
     }
 });
 

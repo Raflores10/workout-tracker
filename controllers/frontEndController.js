@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { User, Workout } = require("../models");
+const bcrypt = require("bcrypt");
 
 router.get('/', (req, res)=> {
     res.render("login");
@@ -10,15 +11,36 @@ router.get('/login', (req, res)=> {
     res.render("login");
 })
 
+router.get('/logout', (req, res)=> {
+    req.session.destroy();
+    res.send("Logged out!");
+})
+
+router.get('/signup', (req, res)=> {
+    res.render("signup");
+})
+
+router.get('/homepage', (req, res)=> {
+    res.render("homepage");
+})
+router.get('/squats', (req, res)=> {
+    res.render("squats");
+})
+router.get('/deadlift', (req, res)=> {
+    res.render("deadlift");
+})
+router.get('/benchpress', (req, res)=> {
+    res.render("benchpress");
+})
+
 router.post("/login", async (req, res)=> {
     try {
         const findUser = await User.findOne({
             where: {
-                username: req.body.username,
-                password: req.body.password
+                username: req.body.username
             }
         });
-        if (findUser){
+        if (findUser && bcrypt.compareSync(req.body.password, findUser.password)){
             req.session.userID = findUser.id;
             req.session.username = findUser.username;
             return res.status(200).json(findUser);
@@ -27,17 +49,8 @@ router.post("/login", async (req, res)=> {
         }
     } catch (error) {
         console.log(error);
-        res.status(500).json({msg: "An error has occurred."});
+        return res.status(500).json({msg: "An error has occurred."});
     }
-})
-
-router.get('/logout', (req, res)=> {
-    req.session.destroy();
-    res.send("Logged out!");
-})
-
-router.get('/signup', (req, res)=> {
-    res.render("signup");
 })
 
 router.post("/signup", async (req, res)=> {
@@ -58,19 +71,6 @@ router.post("/signup", async (req, res)=> {
         console.log(error);
         res.status(500).json({msg: "An error has occurred!"});
     }
-})
-
-router.get('/homepage', (req, res)=> {
-    res.render("homepage");
-})
-router.get('/squats', (req, res)=> {
-    res.render("squats");
-})
-router.get('/deadlift', (req, res)=> {
-    res.render("deadlift");
-})
-router.get('/benchpress', (req, res)=> {
-    res.render("benchpress");
 })
 
 router.get('/record', (req, res)=> {
@@ -115,6 +115,5 @@ router.get('/record', (req, res)=> {
     })
 
 })
-
 
 module.exports = router;
