@@ -130,6 +130,7 @@ a:hover {
     width: 400px;
   }
 .main h3 {
+    font-size: 35px;
     padding: 10px 0 20px;
     text-align: center;
 }
