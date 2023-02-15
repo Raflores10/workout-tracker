@@ -95,14 +95,23 @@ router.get('/record', (req, res)=> {
         const filteredBench = bench.filter((max, index)=> {
             return index === bench.indexOf(max);
         })
+        filteredBench.sort((a, b)=> {
+            return b - a;
+        });
 
         const filteredDeadlift = deadlift.filter((max, index)=> {
             return index === deadlift.indexOf(max);
         })
+        filteredDeadlift.sort((a, b)=> {
+            return b - a;
+        });
 
         const filteredSquat = squat.filter((max, index)=> {
             return index === squat.indexOf(max);
         })
+        filteredSquat.sort((a, b)=> {
+            return b - a;
+        });
 
         res.render("record", {
             benchMaxes: filteredBench,

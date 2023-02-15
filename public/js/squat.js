@@ -23,12 +23,9 @@ document.querySelector("form").addEventListener("submit", async (e)=> {
   
     const oneRepMax = Math.round((100 * weight.value) / (101.3 - (2.67123 * reps.value)));
   
-    const previousMaxData = await fetch("/api/workouts/1");
-    const previousMaxes = await previousMaxData.json();
-  
     const newWorkout = {
-      bench_max: previousMaxes[previousMaxes.length - 1].bench_max,
-      deadlift_max: previousMaxes[previousMaxes.length - 1].deadlift_max,
+      bench_max: null,
+      deadlift_max: null,
       squat_max: oneRepMax
     }
   
