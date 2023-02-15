@@ -129,8 +129,20 @@ a:hover {
     margin: 0px auto;
     width: 400px;
   }
-.main h3 {
+.main h2 {
     padding: 10px 0 20px;
+    text-align: center;
+}
+
+.form-group {
+    text-align: center;
+    
+}
+.form-group-reps {
+    text-align: center;
+    padding-left: 20px;
+}
+.calcButton {
     text-align: center;
 }
 
