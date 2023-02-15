@@ -145,6 +145,21 @@ a:hover {
     justify-content: center;
 }
 
+.weight, .reps {
+    padding: 5px;
+    border-radius: 10px;
+    margin: 4px;
+}
+
+.btn-default {
+    appearance:none;
+    -webkit-appearance:none;
+    padding:10px;
+    border:none;
+    background-color:#3F51B5;
+    color:#fff;
+}
+
 @media screen and (max-width: 900px) {
 
     .nav-links a,
