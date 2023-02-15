@@ -16,7 +16,7 @@ router.get("/sessionid", async (req, res)=> {
     try {
         const allUserWorkouts = await Workout.findAll({
             where: {
-                user_id: req.session.id
+                user_id: req.session.userID
             }
         });
         res.status(200).json(allUserWorkouts);
