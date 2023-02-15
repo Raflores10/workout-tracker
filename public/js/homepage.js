@@ -1,3 +1,16 @@
+const homeLink = document.createElement("a");
+homeLink.setAttribute("href", "#");
+homeLink.setAttribute("class", "record");
+homeLink.textContent = "Record";
+
+const logoutLink = document.createElement("a");
+logoutLink.setAttribute("href", "#");
+logoutLink.setAttribute("class", "logout");
+logoutLink.textContent = "Logout";
+
+document.querySelector(".nav-links").appendChild(homeLink);
+document.querySelector(".nav-links").appendChild(logoutLink);
+
 document.querySelector(".record").addEventListener("click", (e)=> {
     e.preventDefault();
 
