@@ -4,7 +4,7 @@ body {
     align-content: space-between;
 }
 
-table {
+table {    
     text-align: center;
 }
 
@@ -131,7 +131,9 @@ a:hover {
     padding: 20px;
     margin: 0px auto;
     width: 400px;
-  }
+    height: 60vh;
+}
+
 .main h3 {
     padding: 10px 0 20px;
     text-align: center;
