@@ -15,7 +15,7 @@ span {
 nav,
 footer {
     background-color: blanchedalmond;
-    width: 100%;
+    width:inherit;
 }
 
 h1 {
@@ -59,6 +59,11 @@ a:hover {
     justify-content: space-around;
 }
 
+.selection {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
 .card-body {
     display: flex;
     flex-direction: row;
@@ -68,11 +73,18 @@ a:hover {
     background-color: #bbdefb;
     padding: 15px;
     gap: 5px;
+    
 }
 
 .card {
     width: 15rem;
+    box-shadow: black 9px 7px 5px;  
 }
+
+.card:hover {
+    color: green;
+}
+
 .card-img-top {
     display: flex;
     flex-direction: row;
@@ -131,10 +143,16 @@ a:hover {
     padding: 20px;
     margin: 0px auto;
     width: 400px;
+}
+
+.main h2 {
+    font-size: 32px;
+
     height: 60vh;
 }
 
 .main h3 {
+
     padding: 10px 0 20px;
     text-align: center;
 }
