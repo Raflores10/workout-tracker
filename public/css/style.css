@@ -143,12 +143,11 @@ a:hover {
     padding: 20px;
     margin: 0px auto;
     width: 400px;
+    height: 60vh;
 }
 
 .main h2 {
     font-size: 32px;
-
-    height: 60vh;
 }
 
 .main h3 {
