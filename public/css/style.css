@@ -4,7 +4,7 @@ body {
     align-content: space-between;
 }
 
-table {
+table {    
     text-align: center;
 }
 
@@ -15,7 +15,7 @@ span {
 nav,
 footer {
     background-color: blanchedalmond;
-    width: 100%;
+    width:inherit;
 }
 
 h1 {
@@ -59,6 +59,11 @@ a:hover {
     justify-content: space-around;
 }
 
+.selection {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
 .card-body {
     display: flex;
     flex-direction: row;
@@ -68,6 +73,16 @@ a:hover {
     background-color: #bbdefb;
     padding: 15px;
     gap: 5px;
+    
+}
+
+.card {
+    width: 15rem;
+    box-shadow: black 9px 7px 5px;  
+}
+
+.card:hover {
+    color: green;
 }
 
 .card-img-top {
@@ -128,9 +143,29 @@ a:hover {
     padding: 20px;
     margin: 0px auto;
     width: 400px;
-  }
+    height: 60vh;
+}
+
+.main h2 {
+    font-size: 32px;
+    text-align: center;
+}
+
 .main h3 {
+
     padding: 10px 0 20px;
+    text-align: center;
+}
+
+.form-group {
+    text-align: center;
+    
+}
+.form-group-reps {
+    text-align: center;
+    padding-left: 20px;
+}
+.calcButton {
     text-align: center;
 }
 
@@ -143,6 +178,21 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.weight, .reps {
+    padding: 5px;
+    border-radius: 10px;
+    margin: 4px;
+}
+
+.btn-default {
+    appearance:none;
+    -webkit-appearance:none;
+    padding:10px;
+    border:none;
+    background-color:#3F51B5;
+    color:#fff;
 }
 
 @media screen and (max-width: 900px) {
@@ -174,5 +224,15 @@ a:hover {
         align-items: center;
         padding: 20px 40px;
         text-align: center;
+    }
+
+    .card-img-top, .card-body {
+        max-width: 100%;
+        height: auto;
+        
+    }
+
+    .card {
+        width: 10rem;
     }
   }
